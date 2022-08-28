@@ -1,0 +1,19 @@
+name: shell Commands
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo una cadena
+        run: echo "Hola Moegui"
+      #- name: multiline script
+        #run: |
+          #echo ${{GITHUB_ACTOR}}
+          #echo ${{GITHUB_REPOSITORY}}
+      - name: python Commands
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
